@@ -47,6 +47,8 @@ If (!(Test-Path $env:CCM_PATH)) {
   Start-Process git -ArgumentList "clone https://github.com/pcmanus/ccm.git $($env:CCM_PATH)" -Wait -NoNewWindow
 }
 
+Start-Process vcvarsall amd64
+
 # Copy ccm -> ccm.py so windows knows to run it.
 If (!(Test-Path $env:CCM_PATH\ccm.py)) {
   Copy-Item "$env:CCM_PATH\ccm" "$env:CCM_PATH\ccm.py"
