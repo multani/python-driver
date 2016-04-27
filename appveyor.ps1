@@ -40,7 +40,7 @@ If (!(Test-Path $jce_indicator)) {
 }
 
 # Install Python Dependencies for CCM.
-Start-Process python -ArgumentList "-m pip install psutil pyYaml six" -Wait -NoNewWindow
+Start-Process python -ArgumentList "-m pip install psutil pyYaml six numpy" -Wait -NoNewWindow
 
 # Clone ccm from git and use master.
 If (!(Test-Path $env:CCM_PATH)) {
