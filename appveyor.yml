@@ -1,6 +1,6 @@
 environment:
   matrix:
-    - python_version: "C:\\Python27-x64"
+    - python_version: "C:\\Python27"
       cassandra_version: 3.0.3
     - python_version: "C:\\Python34-x64"
       cassandra_version: 3.0.3
