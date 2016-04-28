@@ -15,6 +15,10 @@ build_script:
       python setup.py install
 test_script:
   - ps: .\run_test.ps1
+on_finish:
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+cache:
+
 cache:
   - C:\Users\appveyor\.m2
   - C:\ProgramData\chocolatey\bin
