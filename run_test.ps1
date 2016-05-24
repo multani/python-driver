@@ -1,4 +1,4 @@
-Set-ExecutionPolicy Unrestricted
+set-executionpolicy -executionpolicy unrestricted
 nosetests -s -v --with-ignore-docstrings --with-xunit --xunit-file=unit_results.xml .\tests\unit
 nosetests -s -v --with-ignore-docstrings --with-xunit --xunit-file=standard_results.xml .\tests\integration\standard
 echo "uploading results"
