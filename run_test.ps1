@@ -1,5 +1,5 @@
 Get-ExecutionPolicy
-powershell.exe -executionpolicy Unrestricted nosetests -s -v --with-ignore-docstrings --with-xunit --xunit-file=standard_results.xml .\tests\integration\standard\test_cluster:ClusterTests
+powershell.exe -executionpolicy Unrestricted nosetests -s -v --with-ignore-docstrings --with-xunit --xunit-file=standard_results.xml .\tests\integration\standard\test_cluster.py:ClusterTests
 echo "uploading results"
 echo $env:APPVEYOR_JOB_ID
 $wc = New-Object 'System.Net.WebClient'

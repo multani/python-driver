@@ -33,7 +33,7 @@ build:
         pip install cython
         pip install numpy
         # Install the driver & compile C extensions
-        python setup.py build_ext --inplace
+        python setup.py build_ext --inplace --no-cython
       else
         # Install the driver & compile C extensions with no cython
         python setup.py build_ext --inplace --no-cython
