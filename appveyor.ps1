@@ -1,10 +1,10 @@
 $env:JAVA_HOME="C:\Program Files\Java\jdk1.8.0"
 $env:PYTHON=$env:python
-$env:PYTHONPATH="$($env:PYTHON)"
 $env:PATH="$($env:PYTHON);$($env:PYTHON)\Scripts;$($env:JAVA_HOME)\bin;$($env:PATH)"
 $env:CCM_PATH="C:\Users\appveyor\ccm"
 $env:CASSANDRA_VERSION=$env:cassandra_version
-
+python --version
+python -c "import platform; print(platform.architecture())"
 # Install Ant
 Start-Process cinst -ArgumentList @("-y","ant") -Wait -NoNewWindow
 # Workaround for ccm, link ant.exe -> ant.bat
