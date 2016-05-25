@@ -12,7 +12,7 @@ build_script:
       "%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat" x86_amd64
       python setup.py install --no-cython
 test_script:
-  - ps: .\run_test.ps1
+  -  cmd: nosetests -s -v --with-ignore-docstrings --with-xunit --xunit-file=standard_results.xml .\tests\integration\standard\test_cluster.py:ClusterTests
 on_finish:
   - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 cache:
