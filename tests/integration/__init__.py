@@ -203,6 +203,7 @@ def use_single_node(start=True, workloads=[]):
 
 
 def remove_cluster():
+    return
     if USE_CASS_EXTERNAL:
         return
 
