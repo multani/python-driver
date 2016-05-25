@@ -1,6 +1,6 @@
 environment:
   matrix:
-    - python_version: "C:\\Python27"
+    - python_version: "C:\\Python27-64"
       cassandra_version: 3.0.3
 os: Visual Studio 2015
 platform:
@@ -12,8 +12,7 @@ build_script:
       "%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat" x86_amd64
       python setup.py install --no-cython
 test_script:
-  -  ps: Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process -force
-  -  cmd: nosetests -s -v --with-ignore-docstrings --with-xunit --xunit-file=standard_results.xml .\tests\integration\standard\test_cluster.py:ClusterTests
+  -  cmd: .\run_test.ps1
 on_finish:
   - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 cache:
