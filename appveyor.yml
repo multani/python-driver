@@ -2,7 +2,7 @@ environment:
   matrix:
     - python_version: 2.7.11
       PYTHON: "C:\\Python27-x64"
-      cassandra_version: 3.0.3
+      cassandra_version: 3.0.6
 os: Visual Studio 2015
 platform:
   - x64
