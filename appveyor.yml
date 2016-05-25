@@ -10,7 +10,7 @@ install:
 build_script:
   - cmd: |
       "%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat" x86_amd64
-      python setup.py install
+      python setup.py install --no-cython
 test_script:
   - ps: .\run_test.ps1
 on_finish:
